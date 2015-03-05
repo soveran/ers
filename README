@@ -30,5 +30,11 @@ The result will be the same as in the previous example.
 Installation
 ------------
 
-Make sure you have `awk` in your system, then copy `ers` anywhere
-in your path.
+Make sure you have `awk` in your system, then run `make` to create
+the `ers` executable, and copy it anywhere in your path.
+
+The reason for building the file this way is because the shebang
+in `ers` needs to pass the `-f` flag to `awk`. Using the usual
+`/usr/bin/env awk -f` would be problematic, because it's not POSIX
+and it doesn't work on Linux. Therefore when building the script
+we use the direct path to `awk` in the shebang, e.g. `/bin/awk -f`.

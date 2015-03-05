@@ -1,4 +1,4 @@
-#!/usr/bin/env awk -f
+#!%shebang% -f
 
 BEGIN {
     if (ARGC < 3) {
