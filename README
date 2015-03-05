@@ -1,0 +1,34 @@
+ers -- Easily replace strings in templates
+
+Description
+-----------
+
+Given a file with %tags%, replace each tag with the value passed
+in the command line.
+
+Example
+-------
+
+If you have the following template:
+
+	$ cat example.txt
+	%foo% %bar%
+
+You can replace the tags with this command:
+
+	$ ers example.txt foo=1 bar=2
+
+The result will be printed to standard output.
+
+If you want to replace strings in standard input instead, just pass
+`-` as the file argument:
+
+	$ cat example.txt | ers - foo=1 bar=2
+
+The result will be the same as in the previous example.
+
+Installation
+------------
+
+Make sure you have `awk` in your system, then copy `ers` anywhere
+in your path.
